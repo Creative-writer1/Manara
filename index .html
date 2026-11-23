@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مَنارة | MANARA</title>
+<meta name="description" content="مَنارة | مساحة كتابية إبداعية لتحويل الأفكار إلى مشاريع: كتابة السيناريو، الكتابة الإعلانية، المحتوى التسويقي وتطوير الحملات.">
+<meta name="theme-color" content="#172B3A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="مَنارة | MANARA">
+<meta property="og:description" content="مساحة كتابية إبداعية لتحويل الأفكار إلى مشاريع.">
+<meta property="og:locale" content="ar_SA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172B3A'/%3E%3Cpath d='M26 54l3-28h6l3 28z' fill='%23F3EEE4'/%3E%3Crect x='27' y='18' width='10' height='8' fill='%23BD8065'/%3E%3Cpath d='M32 9l7 9H25z' fill='%23F3EEE4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&display=swap">
+<style>
+:root{--navy:#172B3A;--teal:#193B3A;--ivory:#F3EEE4;--clay:#BD8065;--sand:#D8C5A5;--mist:#A8B7A5;--bg:var(--ivory);--fg:var(--navy);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;background:var(--ivory);color:var(--navy);line-height:1.9;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.dark{background:var(--navy);color:var(--ivory)}.teal{background:var(--teal);color:var(--ivory)}
+section{padding:clamp(80px,14vh,160px) 7vw}
+.wrap{max-width:760px;margin-inline:auto}
+/* story */
+#story{height:1250vh;position:relative;padding:0;background:#000}
+#stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#flash{position:absolute;inset:0;background:#dfe8ff;opacity:0;pointer-events:none}
+#win{position:absolute;left:50%;top:42%;width:min(86vw,640px);height:min(50vh,480px);transform:translate(-50%,-50%);border:9px solid #151d24;box-shadow:0 0 0 220vmax #000,inset 0 0 50px rgba(0,0,0,.5),inset 0 -26px 50px -18px rgba(189,128,101,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);pointer-events:none;border-radius:2px}
+#win::before,#win::after{content:"";position:absolute;background:#151d24}
+#win::before{left:50%;top:0;bottom:0;width:7px;margin-left:-3px}
+#win::after{top:50%;left:0;right:0;height:7px;margin-top:-3px}
+#line{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 10vw;font-size:clamp(16px,2.7vw,27px);line-height:2;text-wrap:balance;white-space:pre-line;font-weight:300;color:var(--ivory);opacity:0;text-shadow:0 2px 30px #000;transition:opacity .2s}
+.fixed{position:fixed;z-index:20;font:inherit;font-size:14px;color:var(--ivory);background:rgba(23,43,58,.55);border:1px solid rgba(243,238,228,.35);border-radius:99px;padding:8px 18px;cursor:pointer;backdrop-filter:blur(6px)}
+#skip{top:calc(env(safe-area-inset-top,0px) + 14px);inset-inline-start:14px}
+#vib{bottom:calc(env(safe-area-inset-bottom,0px) + 14px);inset-inline-start:14px;font-size:12px}
+#home{top:calc(env(safe-area-inset-top,0px) + 14px);inset-inline-start:14px;display:none;text-decoration:none}
+/* opening */
+#opening{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(180deg,#0f1d29,var(--navy) 45%,var(--teal));color:var(--ivory);position:relative;overflow:hidden}
+#opening::before{content:"";position:absolute;inset-inline:0;bottom:0;height:34%;background:repeating-linear-gradient(180deg,rgba(168,183,165,.10) 0 1px,transparent 1px 14px)}
+#opening h1{font-size:clamp(84px,24vw,260px);font-weight:700;line-height:1.1;letter-spacing:0}
+#opening .en{font-size:clamp(18px,3.4vw,34px);letter-spacing:.5em;color:var(--sand);font-weight:300;margin-top:8px;direction:ltr}
+#opening .role{margin-top:34px;font-size:clamp(18px,2.6vw,26px);color:var(--mist)}
+/* about */
+.big{font-size:clamp(38px,8vw,88px);font-weight:700;line-height:1.25}
+.sub{font-size:clamp(20px,3vw,30px);color:var(--clay);margin-top:14px}
+.brand{font-size:clamp(46px,9vw,92px);font-weight:700;line-height:1.1;margin-top:48px}
+.en2{direction:ltr;text-align:right;color:var(--clay);letter-spacing:.3em;font-weight:300;font-size:clamp(11px,1.5vw,14px);margin:2px -.3em 0 0}
+.long{font-size:clamp(18px,2.2vw,22px);margin-top:36px;white-space:pre-line}
+.long b{font-weight:500}
+.bar{width:64px;height:2px;background:var(--clay);margin:0 0 34px}
+/* services */
+ul.svc{list-style:none;padding:0;margin-top:56px;counter-reset:s}
+ul.svc li{counter-increment:s;display:flex;gap:28px;align-items:baseline;padding:26px 0;border-top:1px solid rgba(243,238,228,.2);font-size:clamp(20px,3.2vw,32px);cursor:default;opacity:.25;transform:translateX(-14px);transition:opacity .9s,transform .9s}
+ul.svc li.in{opacity:1;transform:none}
+ul.svc li:last-child{border-bottom:1px solid rgba(243,238,228,.2)}
+ul.svc li::before{content:counter(s,arabic-indic);color:var(--sand);font-size:.55em;min-width:2em;font-weight:300}
+/* light */
+.fz{font-size:clamp(56px,13vw,150px);font-weight:700;color:var(--clay);display:block;line-height:1.2}
+.ht{font-size:clamp(40px,9vw,100px);font-weight:700;color:var(--teal);display:inline-block;border-bottom:6px solid var(--clay);line-height:1.3}
+.big2{font-size:clamp(22px,3.4vw,36px);margin-top:30px}
+.works-h{margin-top:90px;font-size:clamp(30px,5vw,50px);font-weight:700}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:0;margin-top:44px;border-top:1px solid rgba(23,43,58,.25)}
+.cats a{display:flex;justify-content:space-between;align-items:center;padding:34px 6px;border-bottom:1px solid rgba(23,43,58,.25);text-decoration:none;font-size:clamp(19px,2.4vw,24px);font-weight:500;transition:padding .35s,background .35s,color .35s}
+.cats a:hover,.cats a:focus-visible{background:var(--teal);color:var(--ivory);padding-inline:22px}
+.cats a span{color:var(--clay);font-size:1.2em}
+#built{background:linear-gradient(180deg,var(--navy),var(--teal));color:var(--ivory)}
+#lit .wrap{text-align:center}
+#lit .big{font-size:clamp(26px,4.4vw,42px)}
+#lit .big2{font-size:clamp(16px,2.2vw,21px);margin-top:22px}
+#lit .fz{font-size:clamp(30px,5vw,46px);margin:18px 0 6px}
+#lit .ht{font-size:clamp(26px,4.2vw,40px);border-bottom-width:3px}
+#lit .works-h{font-size:clamp(20px,3vw,28px);margin-top:64px}
+#lit .cats a{justify-content:center;gap:14px;padding:26px 6px;font-size:clamp(16px,2vw,19px)}
+#about .big,#about .sub{text-align:center}
+#about .sub{font-size:clamp(15px,2vw,19px);margin-top:10px}
+#lit .lit-title{margin-top:72px}
+#lit .fz{font-size:clamp(26px,4vw,38px)}
+#lit .ht{font-size:clamp(22px,3.4vw,32px)}
+.cta{display:inline-block;margin-top:44px;padding:13px 38px;border:1px solid var(--clay);border-radius:99px;color:var(--ivory);text-decoration:none;font-size:clamp(16px,2vw,19px);background:rgba(189,128,101,.18);transition:background .3s}
+.cta:hover,.cta:focus-visible{background:var(--clay)}
+/* contact */
+#contact{background:linear-gradient(180deg,var(--navy),#0f1d29);color:var(--ivory);text-align:center}
+#contact p{font-size:clamp(20px,3vw,32px);font-weight:300;line-height:2.1}
+#contact p+p{margin-top:36px;color:var(--sand)}
+.ch{display:flex;flex-direction:column;gap:0;margin:64px auto 0;max-width:560px}
+.ch a{display:flex;justify-content:space-between;gap:16px;padding:22px 4px;border-top:1px solid rgba(243,238,228,.22);text-decoration:none;font-size:clamp(16px,2.2vw,20px)}
+.ch a:last-child{border-bottom:1px solid rgba(243,238,228,.22)}
+.ch a:hover{color:var(--clay)}.ch small{color:var(--mist);font-size:.85em}.ch bdi{direction:ltr}
+/* inner pages */
+#page{display:none;min-height:100vh;padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin-top:40px}
+.grid a{display:block;padding:26px;border:1px solid rgba(23,43,58,.25);text-decoration:none}
+.empty{margin-top:50px;padding:60px 24px;border:1px dashed rgba(23,43,58,.35);text-align:center;font-size:20px;color:var(--teal)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}ul.svc li{transition:none;opacity:1;transform:none}}
+#line{direction:ltr;padding:calc(env(safe-area-inset-top,0px) + 9vh) 8vw 4vh;white-space:pre-line}
+#line .t{direction:rtl;max-width:min(30em,100%)}
+#line[data-p=low],#line[data-p=lowR],#line[data-p=lowL]{align-items:flex-end}
+#line[data-p=lowR],#line[data-p=tr]{justify-content:flex-end}
+#line[data-p=lowL],#line[data-p=tl]{justify-content:flex-start}
+#line[data-p=top],#line[data-p=tl],#line[data-p=tr]{align-items:flex-start}
+#line[data-p=lowR] .t,#line[data-p=lowL] .t,#line[data-p=tl] .t,#line[data-p=tr] .t{max-width:min(19em,78%);text-align:right}
+#line[data-s="1"]{font-size:clamp(20px,3.6vw,36px)}
+#line[data-s="2"]{font-size:clamp(30px,7vw,64px);font-weight:500;text-shadow:0 0 40px rgba(216,197,165,.55),0 2px 24px #000}
+#rest{background:linear-gradient(180deg,#0f1d29,var(--navy) 14%,var(--teal) 40%,#142d38 62%,var(--navy) 84%,#070e16)}
+#rest section{position:relative;overflow:hidden;background:none;color:var(--ivory)}
+#about,#built{min-height:92vh;display:flex;align-items:center}
+#about .wrap,#built .wrap{position:relative;z-index:1;width:100%}
+canvas.bg{z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(180deg,transparent,#000 20%,#000 80%,transparent)}
+#about::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,29,41,.55),rgba(15,29,41,.15) 45%,rgba(15,29,41,.5));z-index:0;pointer-events:none}
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1.1s,transform 1.1s}.rv.in{opacity:1;transform:none}
+#lit .ht{color:var(--sand);border-bottom-color:var(--clay)}
+#lit .cats{border-top-color:rgba(243,238,228,.22)}
+#lit .cats a{border-bottom-color:rgba(243,238,228,.22)}
+#lit .cats a:hover,#lit .cats a:focus-visible{background:rgba(243,238,228,.08);color:var(--ivory)}
+#rest #contact{background:linear-gradient(180deg,var(--navy),#0f1d29);text-align:center}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+#opening h1,#opening .en,#opening .role{position:relative;z-index:1}
+#cue{position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);width:1px;height:46px;background:linear-gradient(var(--ivory),transparent);animation:cue 2.2s infinite;pointer-events:none}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}60%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(1);opacity:0}}
+#about{min-height:100vh;min-height:100svh}
+#about2 .brand{margin-top:0}
+#line[data-p=low]{padding-bottom:10vh}
+#reviews{padding:clamp(70px,12vh,130px) 0}
+.rev{display:flex;gap:clamp(28px,6vw,72px);overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 7vw 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rev::-webkit-scrollbar{display:none}
+.q{flex:0 0 min(86vw,560px);scroll-snap-align:center;position:relative;padding-top:64px;white-space:pre-line;font-size:clamp(17px,2.3vw,21px);line-height:2.1;font-weight:300;color:var(--ivory)}
+.q::before{content:"\201C";position:absolute;top:-14px;inset-inline-start:0;font:96px/1 Georgia,serif;color:var(--clay);opacity:.55}
+.rnav{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:26px}
+.rnav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,238,228,.3);background:none;color:var(--ivory);font:inherit;font-size:22px;cursor:pointer}
+.rnav button:hover{background:rgba(243,238,228,.1)}
+#rcount{color:var(--mist);font-size:14px;direction:ltr;min-width:56px;text-align:center}
+.pg{animation:pg .7s ease both}@keyframes pg{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.meta{color:var(--clay);font-size:15px}
+.cv{display:block;width:100%;max-height:60vh;object-fit:cover;margin:24px 0}
+.grid a{display:block;padding:26px 4px;border:0;border-bottom:1px solid rgba(23,43,58,.25);font-size:clamp(19px,2.6vw,26px);font-weight:500;transition:padding .3s}
+.grid a:hover{padding-inline:14px}.grid a small{display:block;color:var(--clay);font-size:13px;font-weight:400}
+</style>
+</head>
+<body>
+<a id="home" class="fixed" href="#opening">الرئيسية</a>
+<button id="skip" class="fixed" type="button">تخطي القصة</button>
+<button id="vib" class="fixed" type="button" hidden></button>
+
+<main id="main">
+<section id="story"><div id="stage"><canvas id="cv"></canvas><div id="flash"></div><div id="win" aria-hidden="true"></div><div id="cue"></div><div id="line" aria-live="polite"></div></div></section>
+
+<section id="opening"><canvas class="bg" id="bgOpen"></canvas><h1>مَنارة</h1><div class="en">MANARA</div><div class="role">كاتبة محتوى إبداعي</div></section>
+
+<div id="rest"><section id="about" class="dark"><canvas class="bg" id="bgAbout"></canvas><div class="wrap">
+<h2 class="big">من خلف المنارة؟</h2>
+<p class="sub">أنا منيرة يوسف، وهذه منارتي.</p>
+</div></section>
+<section id="about2" class="dark"><div class="wrap">
+<div class="brand">مَنارة</div><div class="en2">A Creative Space</div>
+<p class="long">هذه مساحة كتابية إبداعية أعمل فيها على تحويل الأفكار إلى مشاريع، سواء كانت محسوسة أو مرئية أو سمعية.
+
+في المنارة؛ أعمل أنا كاتبة المحتوى أو “الفنارجية” على تسليط الضوء على فكرتك التي تتلاطمها الأمواج إلى أن تصل إلى ضفتها الصحيحة.</p>
+</div></section>
+
+<section id="built"><div class="wrap"><div class="bar"></div>
+<h2 class="big">متى بُنيت المنارة؟</h2>
+<p class="big2">بُنيت منذ ما يقارب ثلاثة أعوام، ومنذ ذلك الحين وهي تبذل كل ما بوسعها لتصمد أمام الرياح العاتية والأمواج الضارية.</p>
+</div></section>
+
+<section id="services" class="teal"><div class="wrap">
+<h2 class="big">ما الذي تضيئه المنارة؟</h2>
+<ul class="svc">
+<li>كتابة السيناريو.</li><li>الكتابة الإعلانية.</li><li>كتابة المحتوى التسويقي.</li><li>كتابة محتوى منصات التواصل الاجتماعي.</li><li>كتابة المحتوى التفاعلي.</li><li>كتابة البريد الإلكتروني.</li><li>كتابة المحتوى التعريفي.</li><li>تطوير الأفكار الإبداعية والحملات.</li>
+</ul></div></section>
+
+<section id="lit"><div class="wrap">
+<p class="big2">يتوه العميل في البحر اللُّجّي، فيستنجد قائلًا:</p>
+<span class="fz">الفزعة!</span>
+<p class="big2">فما للمنارة سوى أن تجيب: <span class="ht">احتزم!</span></p>
+<h2 class="big lit-title">أشياء سلطنا عليها النور</h2>
+<nav class="cats" id="cats" aria-label="تصنيفات الأعمال"></nav>
+</div></section>
+
+<section id="reviews"><div class="rev" id="rev" tabindex="0" aria-label="آراء العملاء"></div><div class="rnav"><button type="button" id="rprev" aria-label="السابق">›</button><span id="rcount"></span><button type="button" id="rnext" aria-label="التالي">‹</button></div></section>
+<section id="contact"><div class="wrap"><p>الآن وقد وصلتَ إلى الضفاف،<br>وشاهدتَ المنارة وهي تسلّط أضواءها على الغرقى والتائهين،<br>تمدّ لهم يدَ العون، وتُنير لهم دروب الوصول.</p>
+<p>فما رأيك أن نُضيء لفكرتك طريقًا،<br>ونمنح مشروعك أفقًا جديدًا؟</p>
+<a class="cta" href="https://wa.me/966506724685" target="_blank" rel="noopener">لنبدأ العمل معًا</a>
+<div class="ch">
+<a href="mailto:muniraywsf701@gmail.com">البريد الإلكتروني <bdi>muniraywsf701@gmail.com</bdi></a>
+<a href="https://wa.me/966506724685" target="_blank" rel="noopener">واتساب <bdi>+966506724685</bdi></a>
+<a href="https://www.instagram.com/cwmuni/" target="_blank" rel="noopener">إنستغرام <bdi>cwmuni</bdi></a>
+</div></div></section></div>
+</main>
+
+<section id="page"><div class="wrap" id="pageIn"></div></section>
+
+<script>
+/* ===== البيانات: أضيفي الأعمال هنا فقط ===== */
+const CATS=[
+["script","نماذج كتابة السيناريو"],["ads","نماذج الكتابة الإعلانية"],["social","نماذج كتابة محتوى منصات التواصل الاجتماعي"],["marketing","نماذج الكتابة التسويقية"],["intro","نماذج كتابة المحتوى التعريفي"],["media","نماذج كتابة المحتوى المرئي والسمعي"],["creative","نماذج الكتابة الإبداعية"]];
+/* كل عمل: {id:"work-1", title:"", cats:["script","ads"], body:"نص التفاصيل"} */
+const WORKS=[];
+
+const $=s=>document.querySelector(s);
+$('#cats').innerHTML=CATS.map(c=>`<a href="#cat-${c[0]}">${c[1]}<span>‹</span></a>`).join('');
+
+/* ===== آراء العملاء: أضيفي أي رأي جديد هنا ===== */
+const REVIEWS=[
+"ماشاء الله تبارك الرحمن\nعيوني هكذا و أنا أقرأ 🥹\n🩷🩷🩷🩷\nالله يحسن إليك سلمتِ وسلمت يداك",
+"منيييييييررررة وش هالابدااااااع ماشاء الله الله يبااااااارك عيني عليك بااااااردة 😭😭😭😭\nأنا هايمه بجمال النص 😭\nتلين لك الحُروف اذا كتبتِ الله يبااااارك اللهمّ زدها ولا تنقصها وأعطها ولا تحرمها وأحسن اليها وتولى مجازتها وسخِّر لها وأكفها ما أهمّها",
+"احس الحلو بالموضوع بعد إنه منيره تفهمنا على طول وتفيدنا بعد\nلولا الله ثم منيرة مدري وش كنا بنسوي 🤣",
+"يارب احمدك\nعلى نعمة وجود منيرة\nتوي انتهيت من القراءة\nسبحان الوهاب الي وهبك واعطاك\nالله يجعل قلمك سيااااااااال في خدمة الدين\nمتشوقة لمعرفة النهاية\nوكأني لااعرفها من قبل",
+"الله يبااااارك منيرة !🫂❤️‍🔥\nأبدعتي أبدعتي في كل حرف ..\nوصلني الشعور قبل تطبيقه عملياً 🥹\n\nأسأل الله أن يبارك في قلمك ويجعل لك بكل حرف نورًا وأجرًا لا ينقطع وأن يسخّرك لدينه ما حييتِ ..✨\nامييييييييين💦",
+"الفكرة عايمه شوي\nومتحممممسه تصير بين يديك\nان شاء الله بتضبطينا وتحسنينها",
+"جميل جدًا أكملي فيه تعديلات لا تُذكر\nما تبقى رائع تبارك الله",
+"فكرة حلوه مراا صراحه وخارجه عن صندوق",
+"فكره منيره مره تجنن ومناسب جدا",
+"السلام عليكم ورحمة الله وبركاته\nكيف حالك؟💦\nما ادري من وين أبدأ ومن وين انتهي\nصدددددددددددددددددددددددددقًا\nمن محاسن هذا الصيف اني تعرفت عليك\nوعلى موهبتك الفريدة!\nوأنا أشعر يقينًا\nبإذن الله\nإنه ربي بيسر لك السبل وبيحسن اليك كما أحسنتِ إلينا\nوبيفتح عليك في هذا الطريق الطيب النافع\n\nالله يسمعني عنك كل خير ويجعل قلمك سيّال في نصرة دينه وسنة نبيه صلى الله عليه وسلم",
+"ابشرك سوينا البرنامج حقك 🥹🥹 الله يبارك على ابداعك\nعندي كلام كثير اقولك",
+"مررره  حبيييتتت !؟!؟\nياخييي فنانه صدق ماشاءالله عليك\nخاصة لما يروي له القصة\nاحسني اندمجتتت\nيعطيك العافية"];
+const rv=$('#rev'),rc=$('#rcount');
+REVIEWS.forEach(t=>{const d=document.createElement('blockquote');d.className='q';d.textContent=t;rv.appendChild(d)});
+const rstep=()=>Math.abs(rv.children[1].getBoundingClientRect().left-rv.children[0].getBoundingClientRect().left);
+const rupd=()=>{rc.textContent=(Math.min(REVIEWS.length-1,Math.round(Math.abs(rv.scrollLeft)/rstep()))+1)+' / '+REVIEWS.length};
+rv.addEventListener('scroll',rupd,{passive:true});rupd();
+$('#rnext').onclick=()=>rv.scrollBy({left:-rstep(),behavior:'smooth'});
+$('#rprev').onclick=()=>rv.scrollBy({left:rstep(),behavior:'smooth'});
+
+/* ===== التوجيه ===== */
+const main=$('#main'),page=$('#page'),pageIn=$('#pageIn');
+function route(){
+ const h=location.hash.slice(1);let m;
+ if((m=h.match(/^cat-([a-z]+)$/))&&CATS.some(c=>c[0]===m[1])){
+  const c=CATS.find(c=>c[0]===m[1]),ws=WORKS.filter(w=>w.cats.includes(m[1]));
+  pageIn.innerHTML=`<h2 class="big" style="font-size:clamp(30px,6vw,60px)">${c[1]}</h2>`+(ws.length?`<div class="grid">${ws.map(w=>`<a href="#work-${w.id}">${w.cover?`<img class="cv" src="${w.cover}" alt="">`:''}<small>${w.cats.map(k=>CATS.find(c=>c[0]===k)[1]).join(" · ")}</small>${w.title}</a>`).join('')}</div>`:`<div class="empty">لا توجد أعمال في هذا التصنيف حتى الآن.</div>`)+`<p style="margin-top:40px"><a href="#lit">‹ العودة إلى التصنيفات</a></p>`;
+  show(true);return}
+ if((m=h.match(/^work-([a-z0-9-]+)$/))&&WORKS.some(w=>w.id===m[1])){
+  const w=WORKS.find(w=>w.id===m[1]);
+  pageIn.innerHTML=`<p class="meta">${w.cats.map(k=>CATS.find(c=>c[0]===k)[1]).join(" · ")}</p><h2 class="big" style="font-size:clamp(30px,6vw,60px)">${w.title}</h2>${w.cover?`<img class="cv" src="${w.cover}" alt="">`:''}<p class="long">${w.body||''}</p><p style="margin-top:40px"><a href="#cat-${w.cats[0]}">‹ رجوع</a></p>`;
+  show(true);return}
+ show(false);
+ if(h&&document.getElementById(h)){requestAnimationFrame(()=>document.getElementById(h).scrollIntoView())}
+}
+function show(inner){if(inner){pageIn.classList.remove('pg');void pageIn.offsetWidth;pageIn.classList.add('pg')}main.style.display=inner?'none':'';page.style.display=inner?'block':'none';
+ $('#home').style.display=inner?'block':'';$('#skip').style.display=inner?'none':'';$('#vib').style.display=inner?'none':'';
+ if(inner){window.scrollTo(0,0);document.body.style.background='var(--ivory)';$('#home').href='#opening'}onScroll()}
+addEventListener('hashchange',route);
+
+/* ===== زر التخطي: إلى صفحة افتتاح مَنارة ===== */
+$('#skip').onclick=()=>{history.replaceState(null,'','#opening');document.getElementById('opening').scrollIntoView({behavior:'smooth'})};
+
+/* ===== المشهد السينمائي ===== */
+const cueEl=$('#cue'),cv=$('#cv'),g=cv.getContext('2d'),story=$('#story'),flash=$('#flash'),line=$('#line'),winEl=$('#win'),vb=$('#vib');
+let W,H,DPR,p=0,tp=0,t=0,fl=0,boltPts=null,nextBolt=0,lastVib=0,cur=-1,sp=[];
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,rnd=Math.random;
+let vibOn=!RM&&!!navigator.vibrate;
+if(navigator.vibrate&&!RM){vb.hidden=false;const u=()=>vb.textContent='الاهتزاز: '+(vibOn?'مفعّل':'متوقف');u();vb.onclick=()=>{vibOn=!vibOn;u();if(vibOn)navigator.vibrate(30)}}
+function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR}
+addEventListener('resize',size);size();
+const sm=(a,b,x)=>Math.max(0,Math.min(1,(x-a)/(b-a)));
+const mix=(a,b,k)=>a.map((v,i)=>Math.round(v+(b[i]-v)*k));
+const kf=(u,a)=>{if(u<=a[0][0])return a[0][1];for(let i=1;i<a.length;i++)if(u<=a[i][0]){const k=(u-a[i-1][0])/(a[i][0]-a[i-1][0]),e=k*k*(3-2*k);return a[i-1][1]+(a[i][1]-a[i-1][1])*e}return a[a.length-1][1]};
+const stars=Array.from({length:110},()=>({x:rnd(),y:rnd()*.55,r:rnd()*1.2+.3,a:rnd()}));
+const drops=Array.from({length:900},()=>({x:rnd(),y:rnd(),z:rnd()}));
+const flakes=Array.from({length:260},()=>({x:rnd(),y:rnd(),z:rnd(),ph:rnd()*6}));
+const N=()=>Math.min(900,Math.round(innerWidth*innerHeight/1800));
+/* المقاطع: [وزن الطول، موضع النص، النمط، النص] — | تفصل ظهور الأجزاء تباعًا */
+const B=[
+[1.6,'low',0,"في إحدى ليالي الشتاء العاصفة\nأخذني شيءٌ من القلق والعاطفة\nوراودتني عن نفسي الأسئلة…"],
+[1.2,'low',0,"أتُراني مرغوبةٌ في الديار؟\nوأني فكرةٌ كغيري من الأفكار؟"],
+[3,'low',0,"أم تُراني على النصوص عالة؟\nفصوتُ كاتبي يصدحُ في الصالة\nقائلًا: «والله ماهيب حالة!||لو نستبدل الفكرة هذي أفضل\nبنحصل الي أحلى منها وأجمل\nبنضيع أوقاتنا على الفاضي\nولا العميل بيكون عنَّا راضي!»"],
+[1.6,'low',0,"غضبتُ من فظاظةِ قول الكاتب\nلكنني آثرت ألا أعاتب\nوعزمتُ على الرحيل دون عودة\nغير آبهةٍ بالرياح والبرودة"],
+[2.4,'top',0,"ابتعتُ من المرفإ قارب\nوقلبي محزونٌ وكارب\nوأخذتُ أشقُ طريقًا في البحار\nوعقلي مضطربٌ ومحتار||ولم تدم حيرتي طويلا،"],
+[1.3,'top',0,"إذ اشتدَّ في البحر هطول الأمطار\nوماهي إلا لحظات… حتى شبَّ إعصار!"],
+[.9,'top',0,"وأخذتُ أنجرفُ مع التيَّار"],
+[1.2,'top',0,"علقتُ في العتمةِ الحالكة\nوقلتُ لنفسي: إنكِ هالكة"],
+[2.6,'top',1,"فإذا بنورٍ يبزغُ من بعيد|حوَّل حالي من حزينٍ لسعيد"],
+[2.6,'top',1,"فكان مصدرُ النورِ منارة|رائعةٌ كالوهجِ مستنارة"],
+[3.2,'top',1,"دنوتُ منها، وقد أنهكني المسير\nوأضناني بحرٌ هائجٌ عسير"],
+[1.5,'top',0,"فإذا بها ترشدني إلى الطريق\nمزيحةً عني كلَّ عائقٍ وضيق\n\nقائلةً بنبرةٍ حنونة:"],
+[2.8,'top',0,"لم يكن وجودكِ على «الفاضي»\nوسيكونُ العميل عنكِ راضي||إذا تمّت صياغتكِ بالأسلوب المناسب\nستكونينَ حينها من أثمن المكاسب!"],
+[2.6,'top',0,"شعرتُ بالرضا عن نفسي،\nإذًا…||لم أكن فكرةً تتسببُ في المتاعب\nلكنَّ ذلك الكاتب\nكان صعلوكًا مشاغب!"],
+[1.8,'top',1,"فالحمد لله الكريم الواهب"],
+[3.4,'c',2,"الذي قادني إلى المنارة"]];
+const TOT=B.reduce((a,b)=>a+b[0],0);let acc=0;
+const R=B.map(b=>{const s=acc/TOT;acc+=b[0];return[s,acc/TOT]});
+story.style.height=(TOT*44+100)+'vh';
+function onScroll(){const r=story.getBoundingClientRect(),tt=story.offsetHeight-innerHeight;tp=Math.max(0,Math.min(1,-r.top/tt));
+ if(!/^#(cat|work)-/.test(location.hash)){const s=r.bottom>innerHeight*.6;$('#skip').style.display=s?'':'none';vb.style.display=s?'':'none';$('#home').style.display=s?'none':'block'}
+ document.querySelectorAll('ul.svc li').forEach(li=>{if(li.getBoundingClientRect().top<innerHeight*.9)li.classList.add('in')})}
+addEventListener('scroll',onScroll,{passive:true});
+function thunder(){fl=1;const x0=W*(.2+rnd()*.6);boltPts=[[x0,0]];let x=x0,y=0;while(y<H*.62){y+=H*(.03+rnd()*.05);x+=(rnd()-.5)*W*.08;boltPts.push([x,y])}
+ if(vibOn&&navigator.vibrate&&performance.now()-lastVib>4000){lastVib=performance.now();setTimeout(()=>navigator.vibrate([40,40,90]),400+rnd()*500)}}
+function frame(now){
+ requestAnimationFrame(frame);
+ const sr=story.getBoundingClientRect();if(sr.bottom<0||sr.top>innerHeight)return;
+ t=now/1000;p+=(tp-p)*.14;
+ let i=R.findIndex(x=>p<x[1]);if(i<0)i=B.length-1;
+ const loc=Math.max(0,Math.min(1,(p-R[i][0])/(R[i][1]-R[i][0]))),u=i+loc,K=a=>kf(u,a);
+ const storm=K([[0,.28],[4,.3],[4.5,.25],[5,.8],[6,1],[8,1],[9,.75],[10,.5],[11,.2],[12,0]]),
+ snow=K([[0,0],[.5,.8],[2,1],[3.5,.8],[4.3,.2],[5,0]]),win=1-sm(4,4.6,u),
+ lamp=K([[0,1],[4.5,.9],[6.3,.3],[7.4,0],[8,.1],[8.95,.55],[10,1]]),
+ fog=K([[0,.05],[4.5,.08],[6,.25],[8,.55],[9,.45],[10,.15],[11,.05],[16,0]]),
+ dawn=K([[12,0],[14,.35],[16,.9]]),hy=H*K([[0,.5],[4,.5],[4.6,.6],[11,.6],[13.5,.56],[16,.58]]),
+ zoom=K([[0,1],[4,1],[5.3,1.05],[8,1.1],[9,1.25],[11,1.5],[13.5,1.35],[16,1.05]]),
+ lx=W*K([[0,.66],[8,.7],[11,.66],[16,.62]]),lh=H*K([[0,.16],[8,.08],[9,.14],[11,.30],[16,.34]]),
+ bodyA=K([[0,1],[4.6,1],[5.8,.25],[7,0],[9,0],[9.9,1]]),bloom=K([[14.5,0],[16,1]]),
+ panx=W*K([[10,0],[12,-.1],[16,0]]),shoreA=K([[9.5,0],[10.8,1]]),
+ amp=(4+storm*22)*DPR;
+ const top=mix(mix([7,14,22],[16,36,42],storm),[70,92,98],dawn),bot=mix(mix([18,36,50],[24,56,56],storm),[196,148,118],dawn*.9);
+ g.setTransform(1,0,0,1,0,0);
+ let sk=g.createLinearGradient(0,0,0,hy);sk.addColorStop(0,`rgb(${top})`);sk.addColorStop(1,`rgb(${bot})`);g.fillStyle=sk;g.fillRect(0,0,W,H);
+ g.save();g.translate(W/2,H*.62);g.scale(zoom,zoom);g.translate(-W/2+panx,-H*.62);
+ g.globalAlpha=(1-storm*.9)*(1-dawn);stars.forEach(s=>{g.fillStyle=`rgba(243,238,228,${.4+.25*Math.sin(t*2+s.a*9)})`;g.beginPath();g.arc(s.x*W,s.y*H*.9,s.r*DPR,0,7);g.fill()});g.globalAlpha=1;
+ g.fillStyle=`rgba(8,16,22,${.15+storm*.55})`;for(let k=0;k<6;k++){const x=((k*.23+t*.004*(1+storm*3))%1.3-.15)*W;g.beginPath();g.ellipse(x,H*(.1+k%3*.09),W*.28,H*.06,0,0,7);g.fill()}
+ const sea=g.createLinearGradient(0,hy,0,H);sea.addColorStop(0,`rgb(${mix(mix([14,30,40],[24,52,56],storm),[110,120,116],dawn)})`);sea.addColorStop(1,'#050d12');g.fillStyle=sea;g.fillRect(-W,hy,W*3,H*2);
+ for(let l=0;l<5;l++){g.beginPath();const y0=hy+(l+1)*(H-hy)/6;g.moveTo(-W,H*2);for(let x=-W;x<=W*2;x+=24*DPR)g.lineTo(x,y0+Math.sin(x*.004*(1+l*.3)+t*(.8+l*.35+storm))*amp*(.4+l*.3));g.lineTo(W*2,H*2);g.closePath();g.fillStyle=`rgba(${l%2?'25,59,58':'23,43,58'},${.35+l*.05})`;g.fill()}
+ if(shoreA>0){g.globalAlpha=shoreA;g.fillStyle='#0b1a1b';g.beginPath();g.moveTo(lx-W*.4,hy+H*.07);g.quadraticCurveTo(lx-W*.22,hy+H*.004,lx-W*.04,hy+H*.004);g.lineTo(W*1.8,hy+H*.004);g.lineTo(W*1.8,hy+H*.07);g.closePath();g.fill();g.fillStyle='rgba(216,197,165,.22)';g.fillRect(lx-W*.3,hy+H*.062,W*2,H*.008);g.globalAlpha=1}
+ const bw=lh*.14,ly=hy-lh-bw*.35;
+ g.globalAlpha=bodyA;g.fillStyle='#0b141b';g.beginPath();g.moveTo(lx-bw,hy);g.lineTo(lx-bw*.55,hy-lh);g.lineTo(lx+bw*.55,hy-lh);g.lineTo(lx+bw,hy);g.fill();g.fillRect(lx-bw*.8,hy-lh-bw*.7,bw*1.6,bw*.7);g.globalAlpha=1;
+ const ang=t*.9,beam=lamp*(.65+.35*Math.max(0,Math.cos(ang))),dir=Math.cos(ang)>0?-1:1,bl=W*(.7+.3*storm);
+ let bg=g.createLinearGradient(lx,ly,lx+dir*bl,ly);bg.addColorStop(0,`rgba(255,226,170,${.5*beam})`);bg.addColorStop(1,'rgba(255,226,170,0)');g.fillStyle=bg;g.beginPath();g.moveTo(lx,ly);g.lineTo(lx+dir*bl,ly-bl*.07);g.lineTo(lx+dir*bl,ly+bl*.07);g.fill();
+ const gr=H*.03+bw*6;let gl=g.createRadialGradient(lx,ly,0,lx,ly,gr);gl.addColorStop(0,`rgba(255,230,180,${.9*lamp})`);gl.addColorStop(1,'rgba(255,230,180,0)');g.fillStyle=gl;g.fillRect(lx-gr,ly-gr,gr*2,gr*2);
+ if(lamp>.05)for(let k=0;k<9;k++){const w=bw*(4-k*.3)*lamp*(.6+.4*Math.sin(t*2+k));g.fillStyle=`rgba(255,226,170,${.22*lamp})`;g.fillRect(lx-w/2,hy+(k+1)*H*.022,w,2*DPR)}
+ if(bloom>0){const br=H*(.35+.5*bloom);let bl2=g.createRadialGradient(lx,ly,0,lx,ly,br);bl2.addColorStop(0,`rgba(243,238,228,${.4*bloom})`);bl2.addColorStop(.4,`rgba(189,128,101,${.16*bloom})`);bl2.addColorStop(1,'rgba(189,128,101,0)');g.fillStyle=bl2;g.fillRect(lx-br,ly-br,br*2,br*2)}
+ /* المرفأ والقارب */
+ const bt=sm(3.8,4.4,u);
+ if(bt>0){g.save();g.globalAlpha=bt;const px=-sm(4.5,5.5,u)*W*1.2;
+  if(px>-W*1.1){g.fillStyle='#0a1218';g.fillRect(px-W*.1,hy+H*.075,W*.62,H*.02);for(let k=0;k<9;k++)g.fillRect(px+k*W*.065,hy+H*.075,W*.012,H*.1);const qx=px+W*.05,qy=hy+H*.03;g.fillRect(qx,qy,W*.006,H*.045);const hg=g.createRadialGradient(qx,qy,0,qx,qy,H*.16);hg.addColorStop(0,'rgba(255,214,150,.75)');hg.addColorStop(1,'rgba(255,214,150,0)');g.fillStyle=hg;g.fillRect(qx-H*.16,qy-H*.16,H*.32,H*.32)}
+  const bs=Math.min(W*.24,H*.22)*K([[4,1],[5.5,1.1],[10,1.1],[11.8,.8]]),rk=1-sm(11.5,12.3,u)*.8;
+  const bx=W*K([[4,.38],[5.5,.5],[10,.5],[11,.56],[11.8,.585]]),by=hy+H*K([[4,.15],[5.5,.2],[10,.2],[11,.12],[11.8,.072]])+Math.sin(t*1.4)*(2+storm*14)*DPR*rk;
+  g.translate(bx,by);g.rotate(Math.sin(t*1.2)*(.015+storm*.1)*rk);
+  g.fillStyle='#0d171e';g.beginPath();g.moveTo(-bs/2,-bs*.1);g.lineTo(bs/2,-bs*.12);g.quadraticCurveTo(bs*.4,bs*.16,bs*.12,bs*.17);g.lineTo(-bs*.3,bs*.17);g.quadraticCurveTo(-bs*.46,bs*.1,-bs/2,-bs*.1);g.fill();
+  g.strokeStyle='#2b4a50';g.lineWidth=2*DPR;g.beginPath();g.moveTo(-bs/2,-bs*.1);g.lineTo(bs/2,-bs*.12);g.stroke();g.fillStyle='#0d171e';g.fillRect(-bs*.02,-bs*.55,bs*.025,bs*.45);
+  const l2=g.createRadialGradient(0,-bs*.12,0,0,-bs*.12,bs*.5);l2.addColorStop(0,'rgba(255,210,140,.8)');l2.addColorStop(1,'rgba(255,210,140,0)');g.fillStyle=l2;g.fillRect(-bs*.5,-bs*.62,bs,bs);
+  g.fillStyle='rgba(10,24,32,.9)';g.beginPath();g.moveTo(-bs*.6,bs*.22);for(let x=-bs*.6;x<=bs*.6;x+=8*DPR)g.lineTo(x,bs*.1+Math.sin(x*.05+t*3)*bs*.03*rk);g.lineTo(bs*.6,bs*.25);g.closePath();g.fill();g.restore()}
+ /* ضباب */
+ const fg=g.createLinearGradient(0,hy-H*.18,0,hy+H*.14);fg.addColorStop(0,'rgba(168,183,165,0)');fg.addColorStop(.55,`rgba(168,183,165,${fog*.5})`);fg.addColorStop(1,'rgba(168,183,165,0)');g.fillStyle=fg;g.fillRect(-W,hy-H*.18,W*3,H*.32);
+ if(storm>.45&&now>nextBolt){thunder();nextBolt=now+2500+rnd()*5000}
+ if(boltPts&&fl>.5){g.strokeStyle=`rgba(235,242,255,${fl})`;g.lineWidth=2.5*DPR;g.shadowColor='#bcd0ff';g.shadowBlur=18*DPR;g.beginPath();boltPts.forEach((q,k)=>k?g.lineTo(q[0],q[1]):g.moveTo(q[0],q[1]));g.stroke();g.shadowBlur=0}
+ fl*=.9;flash.style.opacity=fl>.02?fl*.45*(fl>.8?1:rnd()*.4+.6):0;
+ g.restore();
+ const wind=storm*.6*(1+Math.sin(t*.7)*.3),n=Math.round(N()*storm*(1-snow*.8));g.lineCap='round';
+ for(let k=0;k<n;k++){const d=drops[k],s=(.9+d.z*1.4)*H*.016;d.y+=s/H;d.x+=wind*s/W*.6;if(d.y>1){d.y=-.05;d.x=rnd()*1.2-.1}if(d.x>1.1)d.x-=1.2;const L=(10+d.z*26)*DPR;g.strokeStyle=`rgba(190,208,225,${.12+d.z*.35})`;g.lineWidth=(.6+d.z)*DPR;g.beginPath();g.moveTo(d.x*W,d.y*H);g.lineTo(d.x*W-wind*L*.6,d.y*H-L);g.stroke()}
+ const fn=Math.round(flakes.length*snow);
+ for(let k=0;k<fn;k++){const f=flakes[k];f.y+=.0009+f.z*.0022;f.x+=Math.sin(t*.8+f.ph)*.0004+wind*.0006+.0002;if(f.y>1.02){f.y=-.02;f.x=rnd()}if(f.x>1.02)f.x=-.02;const r=(1+f.z*3.6)*DPR,x=f.x*W,y=f.y*H,sg=g.createRadialGradient(x,y,0,x,y,r*1.6);sg.addColorStop(0,`rgba(243,238,228,${.35+f.z*.5})`);sg.addColorStop(1,'rgba(243,238,228,0)');g.fillStyle=sg;g.beginPath();g.arc(x,y,r*1.6,0,7);g.fill()}
+ const vg=g.createRadialGradient(W/2,H/2,H*.3,W/2,H/2,H*.95);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,.55)');g.fillStyle=vg;g.fillRect(0,0,W,H);
+ /* النص */
+ const b=B[i],gs=b[3].split('||'),G=gs.length,gi=Math.min(G-1,Math.floor(loc*G)),lg=Math.min(1,loc*G-gi);
+ if(i*10+gi!==cur){cur=i*10+gi;line.dataset.p=b[1];line.dataset.s=b[2];line.innerHTML='<div class="t">'+gs[gi].split('|').map(x=>'<span>'+x+'</span>').join('\n')+'</div>';sp=[...line.querySelectorAll('span')]}
+ const a=sm(0,.16,lg)*((i===B.length-1&&gi===G-1)?1:1-sm(.84,1,lg))*sm(.008,.02,p);
+ sp.forEach((x,k)=>x.style.opacity=sp.length>1?sm(.06+k*.4,.22+k*.4,lg):1);
+ cueEl.style.opacity=1-sm(.004,.012,p);
+ line.style.opacity=a;line.style.transform=`translateY(${(1-a)*10}px)`;
+ winEl.style.display=win>.005?'block':'none';winEl.style.transform=`translate(-50%,-50%) scale(${1+(1-win)*7})`;winEl.style.opacity=Math.min(1,win*3);winEl.style.backdropFilter=winEl.style.webkitBackdropFilter=`blur(${(3*win).toFixed(1)}px)`;
+}
+/* ===== مشاهد الأقسام والخاتمة ===== */
+function boatAt(c,x,y,bs,rk,t,st){c.save();c.translate(x,y+Math.sin(t*1.4)*(2+st*12)*rk);c.rotate(Math.sin(t*1.2)*(.015+st*.1)*rk);
+ c.fillStyle='#0d171e';c.beginPath();c.moveTo(-bs/2,-bs*.1);c.lineTo(bs/2,-bs*.12);c.quadraticCurveTo(bs*.4,bs*.16,bs*.12,bs*.17);c.lineTo(-bs*.3,bs*.17);c.quadraticCurveTo(-bs*.46,bs*.1,-bs/2,-bs*.1);c.fill();
+ c.strokeStyle='#2b4a50';c.lineWidth=1.5;c.beginPath();c.moveTo(-bs/2,-bs*.1);c.lineTo(bs/2,-bs*.12);c.stroke();c.fillStyle='#0d171e';c.fillRect(-bs*.02,-bs*.55,bs*.025,bs*.45);
+ const l=c.createRadialGradient(0,-bs*.12,0,0,-bs*.12,bs*.5);l.addColorStop(0,'rgba(255,210,140,.8)');l.addColorStop(1,'rgba(255,210,140,0)');c.fillStyle=l;c.fillRect(-bs*.5,-bs*.62,bs,bs);
+ c.fillStyle='rgba(10,24,32,.9)';c.beginPath();c.moveTo(-bs*.6,bs*.22);for(let x=-bs*.6;x<=bs*.6;x+=8)c.lineTo(x,bs*.1+Math.sin(x*.05+t*3)*bs*.03*rk);c.lineTo(bs*.6,bs*.25);c.closePath();c.fill();c.restore()}
+function mkScene(cv,get){const c=cv.getContext('2d'),S={fl:0,nb:0,vis:false,dr:Array.from({length:240},()=>({x:rnd(),y:rnd(),z:rnd()}))};
+ new IntersectionObserver(e=>S.vis=e[0].isIntersecting).observe(cv);
+ S.draw=now=>{if(!S.vis)return;const d=Math.min(devicePixelRatio||1,2),w=cv.clientWidth,h=cv.clientHeight,t=now/1000;if(cv.width!==Math.round(w*d)||cv.height!==Math.round(h*d)){cv.width=Math.round(w*d);cv.height=Math.round(h*d)}
+  const o=get(t),lc=o.ivory?'243,238,228':'255,226,170',st=o.storm,hy=h*o.hy,lx=w*o.lx,lh=h*o.lh,bw=lh*.14,ly=hy-lh-bw*.35;c.setTransform(d,0,0,d,0,0);
+  let a=c.createLinearGradient(0,0,0,hy);a.addColorStop(0,`rgb(${mix(mix([7,14,22],[16,36,42],st),[70,92,98],o.dawn)})`);a.addColorStop(1,`rgb(${mix(mix([18,36,50],[24,56,56],st),[196,148,118],o.dawn*.9)})`);c.fillStyle=a;c.fillRect(0,0,w,h);
+  a=c.createLinearGradient(0,hy,0,h);a.addColorStop(0,`rgb(${mix(mix([14,30,40],[24,52,56],st),[110,120,116],o.dawn)})`);a.addColorStop(1,'#050d12');c.fillStyle=a;c.fillRect(0,hy,w,h);
+  for(let l=0;l<4;l++){c.beginPath();const y0=hy+(l+1)*(h-hy)/5;c.moveTo(0,h);for(let x=0;x<=w;x+=16)c.lineTo(x,y0+Math.sin(x*.012*(1+l*.3)+t*(.8+l*.35+st))*(3+st*16)*(.4+l*.3));c.lineTo(w,h);c.closePath();c.fillStyle=`rgba(${l%2?'25,59,58':'23,43,58'},${.35+l*.06})`;c.fill()}
+  if(o.shore>0){c.globalAlpha=o.shore;c.fillStyle='#0b1a1b';c.beginPath();c.moveTo(lx-w*.4,hy+h*.07);c.quadraticCurveTo(lx-w*.22,hy+h*.004,lx-w*.04,hy+h*.004);c.lineTo(w*1.2,hy+h*.004);c.lineTo(w*1.2,hy+h*.07);c.fill();c.fillStyle='rgba(216,197,165,.22)';c.fillRect(lx-w*.3,hy+h*.062,w*2,h*.008);c.globalAlpha=1}
+  if(o.rocks){c.fillStyle='#08121a';c.beginPath();c.moveTo(lx-w*.24,hy+h*.14);c.lineTo(lx-w*.09,hy+h*.01);c.lineTo(lx+w*.09,hy+h*.01);c.lineTo(lx+w*.24,hy+h*.14);c.fill();for(let k=0;k<7;k++){c.fillStyle=`rgba(243,238,228,${.22*(.5+.5*Math.sin(t*2+k*1.7))})`;c.beginPath();c.ellipse(lx-w*.2+k*w*.065,hy+h*.12,w*.03,h*.006,0,0,7);c.fill()}}
+  if(!o.nolh){c.fillStyle='#0b141b';c.beginPath();c.moveTo(lx-bw,hy);c.lineTo(lx-bw*.55,hy-lh);c.lineTo(lx+bw*.55,hy-lh);c.lineTo(lx+bw,hy);c.fill();c.fillRect(lx-bw*.8,hy-lh-bw*.7,bw*1.6,bw*.7);}
+  const ang=t*.9,bm=(o.nolh?0:o.lamp)*(.65+.35*Math.max(0,Math.cos(ang))),dr=Math.cos(ang)>0?-1:1,bl=w*.9;
+  a=c.createLinearGradient(lx,ly,lx+dr*bl,ly);a.addColorStop(0,`rgba(${lc},${.5*bm})`);a.addColorStop(1,`rgba(${lc},0)`);c.fillStyle=a;c.beginPath();c.moveTo(lx,ly);c.lineTo(lx+dr*bl,ly-bl*.07);c.lineTo(lx+dr*bl,ly+bl*.07);c.fill();
+  const gr=h*.03+bw*6;a=c.createRadialGradient(lx,ly,0,lx,ly,gr);a.addColorStop(0,`rgba(${lc},${Math.min(1,.9*o.lamp*!o.nolh)})`);a.addColorStop(1,`rgba(${lc},0)`);c.fillStyle=a;c.fillRect(lx-gr,ly-gr,gr*2,gr*2);
+  if(o.lamp>.05&&!o.nolh)for(let k=0;k<8;k++){const ww=bw*(4-k*.3)*Math.min(1,o.lamp)*(.6+.4*Math.sin(t*2+k));c.fillStyle=`rgba(${lc},${.2*Math.min(1,o.lamp)})`;c.fillRect(lx-ww/2,hy+(k+1)*h*.022,ww,2)}
+  if(o.bloom>0){const br=h*(.4+.5*o.bloom);a=c.createRadialGradient(lx,ly,0,lx,ly,br);a.addColorStop(0,`rgba(243,238,228,${.4*o.bloom})`);a.addColorStop(.4,`rgba(189,128,101,${.16*o.bloom})`);a.addColorStop(1,'rgba(189,128,101,0)');c.fillStyle=a;c.fillRect(lx-br,ly-br,br*2,br*2)}
+  if(o.boat)boatAt(c,w*o.boat.x,hy+h*o.boat.y,Math.min(w*.24,h*.22)*o.boat.s,o.boat.rk,t,st);
+  a=c.createLinearGradient(0,hy-h*.18,0,hy+h*.14);a.addColorStop(0,'rgba(168,183,165,0)');a.addColorStop(.55,`rgba(168,183,165,${o.fog*.5})`);a.addColorStop(1,'rgba(168,183,165,0)');c.fillStyle=a;c.fillRect(0,hy-h*.18,w,h*.32);
+  if(st>.3){c.lineCap='round';const wd=st*.5;S.dr.slice(0,Math.round(240*st)).forEach(q=>{q.y+=(.9+q.z*1.4)*.016;q.x+=wd*.01;if(q.y>1){q.y=-.05;q.x=rnd()*1.2-.1}if(q.x>1.1)q.x-=1.2;const L=10+q.z*24;c.strokeStyle=`rgba(190,208,225,${.12+q.z*.3})`;c.lineWidth=.6+q.z;c.beginPath();c.moveTo(q.x*w,q.y*h);c.lineTo(q.x*w-wd*L*.6,q.y*h-L);c.stroke()})}
+  if(o.flash&&now>S.nb){S.fl=1;S.nb=now+3500+rnd()*5000}
+  if(S.fl>.03){c.fillStyle=`rgba(220,232,255,${S.fl*.22})`;c.fillRect(0,0,w,h);S.fl*=.9}
+  a=c.createRadialGradient(w/2,h/2,h*.3,w/2,h/2,h);a.addColorStop(0,'rgba(0,0,0,0)');a.addColorStop(1,'rgba(0,0,0,.5)');c.fillStyle=a;c.fillRect(0,0,w,h)};
+ SC.push(S);return S}
+const SC=[];
+mkScene($('#bgAbout'),()=>({storm:.12,dawn:0,lamp:1,fog:.4,lx:.2,lh:.22,hy:.72,ivory:1,nolh:1}));
+mkScene($('#bgOpen'),()=>({storm:.1,dawn:0,lamp:1,fog:.35,lx:.8,lh:.24,hy:.7,ivory:1}));
+(function lp(n){requestAnimationFrame(lp);SC.forEach(s=>s.draw(n))})(0);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.2});
+document.querySelectorAll('#about .wrap>*,#about2 .wrap>*,#built .wrap>*,#lit .wrap>*').forEach(e=>{e.classList.add('rv');io.observe(e)});
+requestAnimationFrame(frame);
+route();onScroll();
+</script>
+</body>
+</html>
